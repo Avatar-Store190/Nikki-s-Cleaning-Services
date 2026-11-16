@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Services & Prices | Nikki's Cleaning Service Parow</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:Arial,sans-serif}body{background:#FFF0F7}
+.header{position:sticky;top:0;background:#0A0A0A;color:#fff;padding:12px 14px;display:flex;justify-content:space-between;align-items:center}
+.header a{color:#fff;text-decoration:none;font-weight:700;font-size:12px;margin-left:12px}
+.btn-wa{background:#25D366;color:#fff;padding:10px 16px;border-radius:999px;font-weight:800;text-decoration:none;font-size:12px}
+.hero{background:#E6007E;color:#fff;text-align:center;padding:26px 16px}.hero h1{font-size:28px}
+.wrap{max-width:900px;margin:0 auto;padding:16px}.row{background:#fff;border-radius:16px;padding:14px;margin-top:10px;display:flex;justify-content:space-between;align-items:center;gap:10px;border:1px solid #FFD6EC}.row b{font-size:15px}.row small{color:#666;display:block}.price{color:#E6007E;font-size:20px;font-weight:900;white-space:nowrap}.book{background:#000;color:#fff;padding:10px 14px;border-radius:999px;text-decoration:none;font-size:12px;font-weight:800;white-space:nowrap}
+.special{background:#FFE600;text-align:center;font-weight:900;padding:12px;border-radius:14px;margin-top:14px;display:none}
+.card{background:#fff;border-radius:16px;padding:16px;margin-top:14px}.card p{font-size:13px;line-height:1.6;color:#444;margin-top:6px}
+.footer{text-align:center;padding:20px;font-size:11px;color:#888}
+</style></head><body>
+<div class="header"><div><b>NIKKI'S</b> <span style="color:#FF2FA6">CLEANING</span></div><div><a href="index.html">Home</a><a href="services.html">Services</a></div><a class="btn-wa" id="waTop" href="https://wa.me/27723561249">WhatsApp</a></div>
+<div class="hero"><h1>ALL SERVICES & PRICES</h1><p id="motiveText">Parow, Western Cape • Same-day quotes on WhatsApp</p><div class="special" id="specialBanner">🎄 FESTIVE SPECIAL IS ON! Message us for today's special price.</div></div>
+<div class="wrap"><div id="list"></div>
+<div class="card"><h3>How It Works</h3><p>1. WhatsApp Nikki what you need cleaned<br>2. She gives you a price & time<br>3. Team arrives, cleans, you check — you pay after you're happy.<br><br>📍 Parow, Western Cape • Delft, Parow, Goodwood, Bellville & surrounds<br>📱 <span id="phoneText">072 356 1249</span> • TikTok @nicolewillemse</p><a class="btn-wa" id="waBottom" href="https://wa.me/27723561249" style="display:inline-block;margin-top:10px;padding:12px 18px">BOOK ON WHATSAPP →</a></div>
+</div><div class="footer">Nikki's Cleaning Service • <a href="admin.html">Owner Login</a></div>
+<script>
+let d=JSON.parse(localStorage.getItem('nikkis_data'))||{phone:'27723561249',displayPhone:'072 356 1249',motive:'Parow, Western Cape • Same-day quotes on WhatsApp',special:true,services:[{n:'Deep Cleaning',p:'R400',d:'Full deep clean'},{n:'House Cleaning - Delft Area',p:'R300',d:'Delft area'},{n:'Outside Area',p:'R350',d:'Yard & outside'},{n:'Office Cleaning',p:'R400',d:'Offices & shops'},{n:'Windows',p:'R200',d:'Windows inside & outside'},{n:'Ironing',p:'R200',d:'Ironing'},{n:'Move In & Out',p:'R400',d:'Move in / out clean'}]};
+if(d.special)document.getElementById('specialBanner').style.display='block';
+document.getElementById('motiveText').innerText=d.motive;document.getElementById('phoneText').innerText=d.displayPhone;
+let wa='https://wa.me/'+d.phone;document.getElementById('waTop').href=wa;document.getElementById('waBottom').href=wa;
+document.getElementById('list').innerHTML=d.services.map(s=>`<div class="row"><div><b>✔️ ${s.n}</b><small>${s.d||''}</small></div><div class="price">${s.p}</div><a class="book" href="${wa}?text=${encodeURIComponent('Hi Nikki, I want '+s.n+' '+s.p)}">Book →</a></div>`).join('');
+</script></body></html>
