@@ -30,9 +30,7 @@ body{background:var(--light);color:#111}
 .member{background:#fff;border-radius:14px;padding:12px;text-align:center}
 .member img{width:70px;height:70px;border-radius:50%;object-fit:cover;border:3px solid var(--pink)}
 .footer{text-align:center;padding:20px;font-size:11px;color:#888}.footer a{color:#E6007E;font-weight:800;cursor:pointer}
-/* SERVICES LIST ON SAME PAGE */
 .row{background:#fff;border-radius:16px;padding:14px;margin-top:10px;display:flex;justify-content:space-between;align-items:center;gap:10px;border:1px solid #FFD6EC}.row b{font-size:15px}.row small{color:#666;display:block}.price2{color:#E6007E;font-size:20px;font-weight:900;white-space:nowrap}.book{background:#000;color:#fff;padding:10px 14px;border-radius:999px;text-decoration:none;font-size:12px;font-weight:800;white-space:nowrap}
-/* ADMIN */
 #adminView{display:none;max-width:700px;margin:0 auto;padding:14px}
 #adminView label{font-weight:800;font-size:12px;display:block;margin-top:14px}
 #adminView input,#adminView textarea,#adminView select{width:100%;padding:10px;border:1px solid #ddd;border-radius:10px;margin-top:4px}
@@ -41,44 +39,35 @@ body{background:var(--light);color:#111}
 #adminView .row2{display:grid;grid-template-columns:1fr 1fr;gap:10px}
 .serviceBox{border:1px solid #eee;padding:10px;border-radius:12px;margin-top:8px;background:#fff}
 .small{font-size:12px;color:#666}
+.team-preview{width:70px;height:70px;border-radius:50%;object-fit:cover;border:3px solid #E6007E;display:block;margin:8px auto}
+.fileBtn{background:#FFE6F3!important;color:#E6007E!important;border:2px dashed #E6007E!important}
 </style></head><body>
 
-<!-- ============ PUBLIC WEBSITE ============ -->
 <div id="publicView">
 <div class="header"><div class="logo"><img id="logoImg" src="https://images.unsplash.com/photo-1581578731548-c64695cc6952?w=200&q=80"><div class="logo-text">NIKKI'S<br><span>CLEANING SERVICE</span></div></div><nav class="nav"><a href="#top">Home</a><a href="#services">Services</a></nav><a class="btn-wa" id="waTop" href="https://wa.me/27723561249">WhatsApp</a></div>
-
 <div class="hero" id="top"><h1>Let Me Help You Make<br><span>Your Life A Little Easier ♥</span></h1><p id="motiveText">Festive season is here — uit turn season is here. Deep cleaning, house cleaning, office, windows & more in Parow & surrounds.</p><div class="special" id="specialBanner">🎄 FESTIVE SPECIAL ON — Ask on WhatsApp for today's special price!</div><br><br><a class="btn-wa" id="waHero" href="https://wa.me/27723561249?text=Hi%20Nikki%2C%20I%20want%20a%20cleaning%20quote">Book On WhatsApp →</a><p style="font-size:12px;margin-top:10px">📍 Parow, Western Cape &nbsp;|&nbsp; 📱 <span id="phoneText">072 356 1249</span> &nbsp;|&nbsp; TikTok @nicolewillemse</p></div>
-
 <div class="wrap">
 <div class="card"><h2>Our Motive 💖</h2><p id="motive2">We believe a clean home = a calm mind. Nikki started this business to help busy moms, working families and offices in Parow, Delft & Cape Town have a little more time, and a little less stress. We clean with love, care and pride — like it's our own home.</p></div>
-
 <h2 style="margin-top:20px" id="services">Popular Services — Tap To Book</h2>
 <div class="grid" id="servicesGrid"></div>
-
 <div class="card"><h2>All Services & Prices 💰</h2><div id="list"></div></div>
-
 <div class="card"><h2>Before & After / Our Work 📸</h2><div class="gallery" id="galleryGrid"></div><p style="font-size:11px;color:#999">Photos are added by Nikki from her Owner Dashboard.</p></div>
-
 <div class="card"><h2>Meet Our Team 👩🏽‍🤝‍👩🏾</h2><div class="team" id="teamGrid"></div></div>
-
 <div class="card"><h2>How It Works</h2><p>1. WhatsApp Nikki what you need cleaned<br>2. She gives you a price & time<br>3. Team arrives, cleans, you check — you pay after you're happy.<br><br>📍 Parow, Western Cape • Delft, Parow, Goodwood, Bellville & surrounds</p></div>
-
 <div class="card" style="text-align:center;background:#0A0A0A;color:#fff"><h2 style="color:#FF2FA6">Ready For A Clean Home?</h2><p style="color:#ddd">Message Nikki now — she replies fast on WhatsApp.</p><a class="btn btn-pink" id="waBottom" href="https://wa.me/27723561249?text=Hi%20Nikki%2C%20I%20want%20a%20cleaning%20quote%20in%20Parow">GET A FREE QUOTE ON WHATSAPP</a><p style="margin-top:10px;font-size:12px">Call / WhatsApp: <span id="phoneText2">072 356 1249</span> • Parow, Western Cape</p></div>
 </div>
 <div class="footer">Nikki's Cleaning Service • Parow, Western Cape • <a onclick="showAdmin()">Owner Login 🔒</a></div>
 </div>
 
-<!-- ============ OWNER DASHBOARD (SAME FILE) ============ -->
 <div id="adminView">
-<div style="background:#fff;border-radius:18px;padding:18px;border:2px solid #FFD6EC" id="loginBox"><h2 style="color:#E6007E">Owner Login 🔒</h2><p class="small">Only Nikki can enter. Default password: <b>1234</b></p><label>Password</label><input id="pass" type="password" placeholder="Enter password"><button onclick="login()">Login</button><p class="small" style="text-align:center;margin-top:10px"><a href="#" onclick="showPublic();return false">← Back to website</a></p></div>
-
+<div style="background:#fff;border-radius:18px;padding:18px;border:2px solid #FFD6EC" id="loginBox"><h2 style="color:#E6007E">Owner Login 🔒</h2><p class="small">Only Nikki can enter. </b></p><label>Password</label><input id="pass" type="password" placeholder="Enter password"><button onclick="login()">Login</button><p class="small" style="text-align:center;margin-top:10px"><a href="#" onclick="showPublic();return false">← Back to website</a></p></div>
 <div style="background:#fff;border-radius:18px;padding:18px;border:2px solid #FFD6EC;display:none" id="dash">
 <h2 style="color:#E6007E">Nikki's Dashboard 💖</h2><p class="small">Change anything, click SAVE. It updates the live website instantly on this phone/browser.</p>
 <label>Company Logo — Upload Photo</label><input type="file" accept="image/*" onchange="upLogo(this)">
 <label>Motive / About Text (Home)</label><textarea id="motive2Input" rows="3"></textarea>
 <label>Top Banner Text</label><textarea id="motiveInput" rows="2"></textarea>
-<label>WhatsApp Number (without + , e.g. 27723561249)</label><input id="phoneInput">
-<label>Display Number (e.g. 072 356 1249)</label><input id="displayPhoneInput">
+<label>WhatsApp Number (without + , e.g. 277********9)</label><input id="phoneInput">
+<label>Display Number (e.g. 07* *** ***9)</label><input id="displayPhoneInput">
 <label>🎄 Festive Special? Show special banner?</label><select id="specialInput"><option value="true">YES - Show Special</option><option value="false">NO - Hide Special</option></select>
 <h3 style="margin-top:16px">Services & Prices</h3><div id="servicesEdit"></div><button onclick="addService()" style="background:#000">+ Add New Service</button>
 <h3 style="margin-top:16px">Photos — Add Photos Of Your Work</h3><p class="small">Upload from phone — they appear in Gallery.</p><input type="file" accept="image/*" onchange="addPhoto(this)"><div id="photosEdit"></div>
@@ -101,19 +90,33 @@ let wa='https://wa.me/'+d.phone;document.getElementById('waTop').href=wa;documen
 document.getElementById('servicesGrid').innerHTML=d.services.map(s=>`<div class="service"><b>${s.n}</b><div class="price">${s.p}</div><p>${s.d}</p><a class="btn btn-pink" href="${wa}?text=${encodeURIComponent('Hi Nikki, I want '+s.n+' '+s.p)}">Book This →</a></div>`).join('');
 document.getElementById('list').innerHTML=d.services.map(s=>`<div class="row"><div><b>✔️ ${s.n}</b><small>${s.d||''}</small></div><div class="price2">${s.p}</div><a class="book" href="${wa}?text=${encodeURIComponent('Hi Nikki, I want '+s.n+' '+s.p)}">Book →</a></div>`).join('');
 document.getElementById('galleryGrid').innerHTML=d.photos.map(p=>`<img src="${p}">`).join('');
-document.getElementById('teamGrid').innerHTML=d.team.map(t=>`<div class="member"><img src="${t.img}"><br><b>${t.n}</b><br><span style="font-size:12px;color:#666">${t.r}</span></div>`).join('');
+document.getElementById('teamGrid').innerHTML=d.team.map(t=>`<div class="member"><img src="${t.img||'https://via.placeholder.com/150?text=Nikki'}"><br><b>${t.n}</b><br><span style="font-size:12px;color:#666">${t.r}</span></div>`).join('');
 }
 function showAdmin(){document.getElementById('publicView').style.display='none';document.getElementById('adminView').style.display='block';window.scrollTo(0,0)}
 function showPublic(){document.getElementById('adminView').style.display='none';document.getElementById('publicView').style.display='block';renderPublic();window.scrollTo(0,0)}
 function login(){if(document.getElementById('pass').value===pass){document.getElementById('loginBox').style.display='none';document.getElementById('dash').style.display='block';renderEdit()}else alert('Wrong password')}
-function renderEdit(){document.getElementById('motiveInput').value=d.motive;document.getElementById('motive2Input').value=d.motive2;document.getElementById('phoneInput').value=d.phone;document.getElementById('displayPhoneInput').value=d.displayPhone;document.getElementById('specialInput').value=String(d.special);
+function renderEdit(){
+document.getElementById('motiveInput').value=d.motive;document.getElementById('motive2Input').value=d.motive2;document.getElementById('phoneInput').value=d.phone;document.getElementById('displayPhoneInput').value=d.displayPhone;document.getElementById('specialInput').value=String(d.special);
 document.getElementById('servicesEdit').innerHTML=d.services.map((s,i)=>`<div class="serviceBox"><label>Service ${i+1}</label><input value="${s.n}" onchange="d.services[${i}].n=this.value"><div class="row2"><input value="${s.p}" onchange="d.services[${i}].p=this.value"><input value="${s.d||''}" placeholder="Description" onchange="d.services[${i}].d=this.value"></div><button class="del" onclick="d.services.splice(${i},1);renderEdit()">Remove</button></div>`).join('');
 document.getElementById('photosEdit').innerHTML=d.photos.map((p,i)=>`<div style="display:flex;gap:8px;margin-top:8px;align-items:center"><img src="${p}" style="width:60px;height:60px;object-fit:cover;border-radius:10px"><button class="del" style="width:auto;padding:8px 14px" onclick="d.photos.splice(${i},1);renderEdit()">Delete</button></div>`).join('');
-document.getElementById('teamEdit').innerHTML=d.team.map((t,i)=>`<div class="serviceBox"><input value="${t.n}" onchange="d.team[${i}].n=this.value" placeholder="Name"><input value="${t.r}" onchange="d.team[${i}].r=this.value" placeholder="Role"><input value="${t.img}" onchange="d.team[${i}].img=this.value" placeholder="Photo link"><button class="del" onclick="d.team.splice(${i},1);renderEdit()">Remove</button></div>`).join('')}
+// NEW: Team member with phone file picker
+document.getElementById('teamEdit').innerHTML=d.team.map((t,i)=>`
+<div class="serviceBox" style="text-align:center">
+<img src="${t.img||'https://via.placeholder.com/150?text=Photo'}" class="team-preview">
+<label style="text-align:left">Name</label><input value="${t.n}" onchange="d.team[${i}].n=this.value" placeholder="Name">
+<label style="text-align:left">Role</label><input value="${t.r}" onchange="d.team[${i}].r=this.value" placeholder="Role - e.g. Cleaner">
+<label style="text-align:left">Team Member Picture 📸</label>
+<input type="file" accept="image/*" onchange="upTeamPhoto(${i},this)" style="border:2px dashed #E6007E;background:#FFF0F7">
+<p class="small" style="text-align:center">Tap above to open phone files / gallery, pick a photo</p>
+<button class="del" onclick="d.team.splice(${i},1);renderEdit()">Remove Member</button>
+</div>`).join('');
+}
 function addService(){d.services.push({n:'New Service',p:'R0',d:''});renderEdit()}
 function addMember(){d.team.push({n:'New Member',r:'Cleaner',img:''});renderEdit()}
 function upLogo(el){let r=new FileReader();r.onload=e=>{d.logo=e.target.result;alert('Logo uploaded — click SAVE')};r.readAsDataURL(el.files[0])}
 function addPhoto(el){let r=new FileReader();r.onload=e=>{d.photos.push(e.target.result);renderEdit()};r.readAsDataURL(el.files[0])}
+// NEW FUNCTION: Opens phone files for team member
+function upTeamPhoto(i,el){if(!el.files||!el.files[0])return;let r=new FileReader();r.onload=e=>{d.team[i].img=e.target.result;renderEdit()};r.readAsDataURL(el.files[0])}
 function changePass(){let n=document.getElementById('newPass').value;if(!n)return alert('Type new password');localStorage.setItem('nikkis_pass',n);pass=n;alert('Password changed to: '+n)}
 function save(){d.motive=document.getElementById('motiveInput').value;d.motive2=document.getElementById('motive2Input').value;d.phone=document.getElementById('phoneInput').value;d.displayPhone=document.getElementById('displayPhoneInput').value;d.special=document.getElementById('specialInput').value==='true';localStorage.setItem('nikkis_data',JSON.stringify(d));alert('Saved! Click Back To Website to see changes.');renderPublic()}
 renderPublic();
